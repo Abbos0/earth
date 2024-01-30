@@ -21,13 +21,13 @@ body{
     height: 10em;
     background-color: yellow;
     border-radius: 50%;
-    box-shadow: 0 0 3em white;
+    box-shadow: 0 0 5em white;
 }
 .earth , .moon{
     position: absolute;
     border-style: solid;
-    border-color:transparent transparent transparent  rgb(188, 10, 10);
-    border-width:0em 1em 0 1em 0em 1em ;
+    border-color:  white  transparent transparent transparent ;
+    border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
 }
 .earth{
@@ -35,11 +35,11 @@ body{
     left: 5em;
     width: 30em;
     height: 30em;
-    animation: orbits 36.5s linear infinite;
+    animation: orbits 36s  infinite linear;
 }
 .moon{
     top: 0;
-    left: 0;
+    left: 214px;
     width: 8em;
     height: 8em;
     animation: orbit 2.7s linear infinite;
@@ -51,7 +51,7 @@ body{
 }
 .earth::before{
     top: 2.8em;
-    left: 2.8em;
+    left: 24em;
     width: 3em;
     height: 3em;
     background-color: aqua ;
@@ -61,25 +61,27 @@ body{
     background-position: none;
 }
 .moon::before{
-    top: 0.8em;
-    left: 0.2em;
+    top: 0.1em;
+    left: 6em;
     width: 1.2em;
     height: 1.2em;
     background-color: silver ;
 }
 @keyframes orbit {
-    to{
-        transform: rotate(360deg);
-    }
     from{
         transform: rotate(0deg);
     }
+    to{
+        transform: rotate(360deg);
+    } 
 }
 @keyframes orbits {
-    to{
-        transform: rotate(360deg);
-    }
-    from{
+    0%{
         transform: rotate(0deg);
+        background-position-x: 0px;
+    }
+    100%{
+        transform: rotate(360deg);
+        background-position-x: 1000px;
     }
 }
